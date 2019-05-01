@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.hewanning.admin.common.core.config.JacksonConfig,\
+  com.hewanning.admin.common.core.config.RedisConfig,\
+  com.hewanning.admin.common.core.config.RestTemplateConfig,\
+  com.hewanning.admin.common.core.config.FilterIgnorePropertiesConfig,\
+  com.hewanning.admin.common.core.exception.GlobalExceptionHandler,\
+  com.hewanning.admin.common.core.util.SpringContextHolder

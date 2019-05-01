@@ -1,0 +1,43 @@
+server:
+  port: 3000
+
+# �ӽ��ܸ�����
+jasypt:
+  encryptor:
+    password: pig #������
+
+spring:
+  application:
+    name: admin
+  profiles:
+    active: dev
+  redis:
+    password:
+    host: pig-redis
+# ����Դ
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root123456
+    url: jdbc:mysql://pig-mysql:3306/pig?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+
+# mybaits-plus����
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    banner: false
+    db-config:
+      id-type: 0
+      field-strategy: 1
+      table-underline: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+
+# spring security ����
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://admin/oauth/check_token
